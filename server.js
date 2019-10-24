@@ -43,7 +43,7 @@ app.get("/menus", function(req, res) {
 app.post("/new",function(req,res){
     db.ChinaMenu.create(req.body)
     .then((newChinaMenu) => {
-console.log("New Menu Added: ",newChinaMenu);
+console.log("New Menu Added to the system: ",newChinaMenu);
 res.json({
     message: "New item in the menu created",
     error:false,
