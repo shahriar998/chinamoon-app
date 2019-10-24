@@ -57,9 +57,11 @@ res.json({
     })
 })
 
-// app.get("*", (req, res) => {
-//     res.sendFile(path.join(__dirname, "./client/build/index.html"));
-// });
+app.use(express.static(__dirname + '/client/build'));
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
 
 app.listen(PORT, function() {
     console.log(`App is running on http://localhost:${PORT}`);
